@@ -39,4 +39,10 @@ test-results/
 
 # Ignore the pip cache
 pip-wheel-metadata/
+pip-log.txtdata/
+
+# Ignore the pip cache
+pip-wheel-metadata/
 pip-log.txt
+# Ignore the data folder
+data/
