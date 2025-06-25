@@ -92,8 +92,15 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Citations
 
-- Smith, J. (2021). Sentiment Analysis in Environmental Topics. *Environmental Science Journal*.
-- Doe, A. (2020). Machine Learning for Sentiment Detection. *AI Research Journal*.
+### With DOI or URL (complete citation):
+
+- **Smith, J. (2021).** Sentiment Analysis in Environmental Topics. *Environmental Science Journal*. [https://doi.org/10.1234/5678](https://doi.org/10.1234/5678) <!-- Replace with actual DOI -->
+- **Doe, A. (2020).** Machine Learning for Sentiment Detection. *AI Research Journal*. [https://www.airesearchjournal.com/sentiment-detection](https://www.airesearchjournal.com/sentiment-detection) <!-- Replace with actual URL -->
+
+### Without DOI or URL (simpler citation):
+
+- **Smith, J. (2021).** Sentiment Analysis in Environmental Topics. *Environmental Science Journal*.
+- **Doe, A. (2020).** Machine Learning for Sentiment Detection. *AI Research Journal*.
 
 ## Project Outline:
 
