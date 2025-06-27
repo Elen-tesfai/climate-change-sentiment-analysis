@@ -115,10 +115,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ### Sentiment Distribution
 
-![Sentiment Distribution](sentiment_distribution.png)
+![Sentiment Distribution](data/sentiment_distribution.png)
 
 ---
 
 ### Confusion Matrix — Random Forest Classifier
 
-![Confusion Matrix](confusion_matrix_rf.png)
+![Confusion Matrix](data/confusion_matrix_rf.png)
