@@ -110,3 +110,13 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 4. **Sentiment Classification and Model Evaluation**
 5. **Results and Discussion**
 6. **Conclusion**
+
+## Results Visualization
+
+### Sentiment Distribution
+
+![Sentiment Distribution](sentiment_distribution.png)
+
+### Confusion Matrix — Random Forest Classifier
+
+![Confusion Matrix](confusion_matrix_rf.png)
