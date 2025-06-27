@@ -4,6 +4,8 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import nltk
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Download necessary NLTK data files (if not already installed)
 nltk.download('punkt')
@@ -43,7 +45,7 @@ def clean_data(dataframe):
     return dataframe
 
 if __name__ == "__main__":
-    # Define output directory for saving cleaned data
+    # Define output directory for saving cleaned data and figures
     output_directory = r'C:\Users\su_te\Documents\climate-change-sentiment-analysis\data'
     
     # Ensure the output directory exists
@@ -51,35 +53,55 @@ if __name__ == "__main__":
         os.makedirs(output_directory)
 
     try:
-        # Attempt to read the CSV file using utf-8-sig (handles BOM in UTF-8)
         df = pd.read_csv(r'C:\Users\su_te\Documents\climate-change-sentiment-analysis\data\sample_data.csv', 
-                         encoding='utf-8-sig',  # Attempt utf-8-sig to handle BOM
-                         on_bad_lines='skip')  # Skip bad lines
+                         encoding='utf-8-sig',
+                         on_bad_lines='skip')
         print("File loaded successfully")
         
-        # Clean the data
         cleaned_data = clean_data(df)
         
-        # Save the cleaned data to a new CSV
         cleaned_data.to_csv(os.path.join(output_directory, 'cleaned_data.csv'), index=False)
         print("Data cleaning complete. Cleaned data saved as 'cleaned_data.csv'")
-    
+
+        # Plot sentiment label distribution
+        plt.figure(figsize=(8,6))
+        sns.countplot(x='label', data=cleaned_data)
+        plt.title('Sentiment Distribution')
+        plt.xlabel('Sentiment')
+        plt.ylabel('Count')
+        plt.tight_layout()
+
+        # Save plot as PNG file
+        plot_path = os.path.join(output_directory, 'sentiment_distribution.png')
+        plt.savefig(plot_path)
+        plt.close()
+        print(f"Sentiment distribution plot saved as {plot_path}")
+
     except UnicodeDecodeError as e:
         print(f"Error: Encoding issue: {e}")
-        # Try reading with 'ISO-8859-1' encoding as a fallback
         print("Attempting to read the file with 'ISO-8859-1' encoding...")
         try:
             df = pd.read_csv(r'C:\Users\su_te\Documents\climate-change-sentiment-analysis\data\sample_data.csv', 
-                             encoding='ISO-8859-1',  # Fallback to ISO-8859-1
+                             encoding='ISO-8859-1',
                              on_bad_lines='skip')
             print("File loaded successfully with ISO-8859-1 encoding")
             
-            # Clean the data
             cleaned_data = clean_data(df)
 
-            # Save the cleaned data to a new CSV
             cleaned_data.to_csv(os.path.join(output_directory, 'cleaned_data.csv'), index=False)
             print("Data cleaning complete. Cleaned data saved as 'cleaned_data.csv'")
+
+            plt.figure(figsize=(8,6))
+            sns.countplot(x='label', data=cleaned_data)
+            plt.title('Sentiment Distribution')
+            plt.xlabel('Sentiment')
+            plt.ylabel('Count')
+            plt.tight_layout()
+
+            plot_path = os.path.join(output_directory, 'sentiment_distribution.png')
+            plt.savefig(plot_path)
+            plt.close()
+            print(f"Sentiment distribution plot saved as {plot_path}")
         
         except Exception as e:
             print(f"Unexpected error: {e}")
