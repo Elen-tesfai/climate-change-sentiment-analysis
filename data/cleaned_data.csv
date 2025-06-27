@@ -1,0 +1,8 @@
+text,label,tokens,cleaned_text
+the effects of global warming are devastating,negative,"['effect', 'global', 'warming', 'devastating']",effect global warming devastating
+we should promote renewable energy to save the planet,positive,"['promote', 'renewable', 'energy', 'save', 'planet']",promote renewable energy save planet
+governments need to do more to combat climate change,negative,"['government', 'need', 'combat', 'climate', 'change']",government need combat climate change
+there's no scientific consensus on climate change,neutral,"[""'s"", 'scientific', 'consensus', 'climate', 'change']",'s scientific consensus climate change
+"the environment is deteriorating, and it is alarming",negative,"['environment', 'deteriorating', ',', 'alarming']","environment deteriorating , alarming"
+we must work together to protect our future from climate change,positive,"['must', 'work', 'together', 'protect', 'future', 'climate', 'change']",must work together protect future climate change
+climate change policies are harming the economy,negative,"['climate', 'change', 'policy', 'harming', 'economy']",climate change policy harming economy
